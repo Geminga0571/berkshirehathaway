@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReasonRepository.Interfaces
 {
@@ -10,20 +11,20 @@ namespace ReasonRepository.Interfaces
 		/// <summary>
 		/// Represents a <see cref="IEnumerable{T}"/> of type <see cref="Entities.Reason"/>
 		/// </summary>
-		IEnumerable<Entities.Reason> ReasonDataStore { get; }
+		IEnumerable<Entities.Reason> GetReasons();
 
 		/// <summary>
 		/// Allows the addition of a new reason
 		/// </summary>
 		/// <param name="entity">The <see cref="Entities.Reason"/> instance to persist</param>
 		/// <returns>The <see cref="Entities.Reason"/> instance added</returns>
-		Entities.Reason AddReason(Entities.Reason entity);
+		Task<Entities.Reason> AddReason(Entities.Reason entity);
 
 		/// <summary>
 		/// Allows the modify of an existing reason
 		/// </summary>
 		/// <param name="entity">The <see cref="Entities.Reason"/> instance to modify</param>
 		/// <returns>The <see cref="Entities.Reason"/> instance modified</returns>
-		Entities.Reason UpdateReason(Entities.Reason entity);
+		Task<Entities.Reason> UpdateReason(Entities.Reason entity);
 	}
 }

@@ -3,10 +3,20 @@
     ViewData["Title"] = "  BHHC";
 }
 
-@foreach(var reason in Model)
-{
 <div>
-	<span>@reason.ReasonVerbage</span>
-	<span>@reason.Id</span>
+	There are many reasons to want to work for Berkshire Hathaway Homestate Companies (BHHC). Below is a top list of what inspires me to want to become a BHHC employee.
 </div>
-}
+
+<ul class="list-group list-group-flush">
+	@foreach (var reason in Model)
+	{
+	<li class="list-group-item">
+		@reason.ReasonVerbage
+		<ul class="list-group">
+			<li class="list-group-item">
+				<u>For Example:</u> <small>@reason.ForExample</small>
+			</li>
+		</ul>		
+	</li>
+	}
+</ul>

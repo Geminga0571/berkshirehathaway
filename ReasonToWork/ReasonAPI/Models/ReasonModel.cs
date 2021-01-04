@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ReasonAPI.Models
+﻿namespace ReasonAPI.Models
 {
 	/// <summary>
 	/// Represents an instance of a reason
@@ -12,5 +7,6 @@ namespace ReasonAPI.Models
 	{
 		public int Id { get; set; }
 		public string ReasonVerbage { get; set; }
+		public string ForExample { get; set; }
 	}
 }

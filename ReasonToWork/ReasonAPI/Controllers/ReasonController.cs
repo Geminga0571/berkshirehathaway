@@ -3,6 +3,7 @@ using ReasonAPI.Models;
 using ReasonRepository.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReasonAPI.Controllers
 {
@@ -32,21 +33,30 @@ namespace ReasonAPI.Controllers
 		public IEnumerable<ReasonModel> Get()
 		{
 			// declare instance of data to be returned
-			var results = new List<ReasonModel>();
-			// iterate the reason data fetced from the repository
-			_reasonRepository.ReasonDataStore.ToList().ForEach(item =>
-			{
-				// declare an instance of the Model and map over it's values
-				var model = new Models.ReasonModel
-				{
-					Id = item.Id,
-					ReasonVerbage = item.ReasonVerbage
-				};
-				// dump the model into the list to be returned
-				results.Add(model);
-			});
+			var models = new List<ReasonModel>();
 
-			return results;
+			// fetch the reason data from repository
+			//var response = await _reasonRepository.GetReasons();
+			var response = _reasonRepository.GetReasons();
+
+			if (response != null)
+			{
+				// iterate the reason data fetced from the repository
+				response.ToList().ForEach(item =>
+				 {
+					 // declare an instance of the Model and map over it's values
+					 var model = new ReasonModel
+					 {
+						 Id = item.Id,
+						 ReasonVerbage = item.ReasonVerbage,
+						 ForExample = item.ForExample
+					 };
+					 // dump the model into the list to be returned
+					 models.Add(model);
+				 });
+			}
+
+			return models;
 		}
 
 		// POST: AddReason
@@ -63,7 +73,8 @@ namespace ReasonAPI.Controllers
 			// return result with status code
 			return Ok(_reasonRepository.AddReason(new ReasonRepository.Entities.Reason { 
 				Id = model.Id,
-				ReasonVerbage = model.ReasonVerbage
+				ReasonVerbage = model.ReasonVerbage,
+				ForExample = model.ForExample
 			}));
 		}
 
@@ -80,7 +91,8 @@ namespace ReasonAPI.Controllers
 			// invoke the repository to modify reason
 			return Ok(_reasonRepository.UpdateReason(new ReasonRepository.Entities.Reason
 			{
-				ReasonVerbage = model.ReasonVerbage
+				ReasonVerbage = model.ReasonVerbage,
+				ForExample = model.ForExample
 			}));
 		}
 	}

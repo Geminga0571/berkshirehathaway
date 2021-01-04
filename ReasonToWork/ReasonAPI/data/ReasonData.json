@@ -1,0 +1,32 @@
+[
+	{
+		"Id": 1,
+		"ReasonVerbage": "Forefront of progressive maintenance and updating of existing applications utilizing best practices and qualifying latest technologies. To enhance usability and ease, streamline the users experience, increasing visualization of the data and allowing quick access to details with the fewest clicks and page reloads possible.",
+		"ForExample": "Using modern tools such as Bootstrap and Ajax to design a view that loads a grid with styled data elements that pop-out to the user and provides simple icon buttons for accessing further details at their fingertips."
+	},
+	{
+		"Id": 2,
+		"ReasonVerbage": "Database structure quality and performance improvements that increase analysis efficiency, retrieval times and data priority. To make data analysis and filing of insurance claims faster, accurate and secure, saving time and money.",
+		"ForExample": "Adding appropriate indexing that does not slow down insert and modification of data along with updated statistics and improved store procedures can inherently reduce the time for data retrieval exponentially."
+	},
+	{
+		"Id": 3,
+		"ReasonVerbage": "Using my abstract thought processing to vette out the relations between the vast amount of technologies and application tools used to align them for ease of use, and reduce the number of bottlenecks that can increase the risk of problems and failure points.",
+		"ForExample": "Implementation of Dependency Injection to maintain the Separation of Concern while allowing the service to consume the data store."
+	},
+	{
+		"Id": 4,
+		"ReasonVerbage": "Reason",
+		"ForExample": "example"
+	},
+	{
+		"Id": 5,
+		"ReasonVerbage": "Reason",
+		"ForExample": "example"
+	},
+	{
+		"Id": 6,
+		"ReasonVerbage": "Reason",
+		"ForExample": "example"
+	}
+]

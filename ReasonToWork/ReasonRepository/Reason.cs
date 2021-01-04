@@ -1,6 +1,9 @@
-﻿using ReasonRepository.Interfaces;
+﻿using Newtonsoft.Json;
+using ReasonRepository.Interfaces;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReasonRepository
 {
@@ -10,51 +13,47 @@ namespace ReasonRepository
 	public class Reason : IReason
 	{
 		// These constants represent each reason as a record in a database table of Reasons
-		private const string REASON_ONE = @"Reason";
-		private const string REASON_TWO = @"Reason";
-		private const string REASON_THREE = @"Reason";
-		private const string REASON_FOUR = @"Reason";
-		private const string REASON_FIVE = @"Reason";
-		private const string REASON_SIX = @"Reason";
-		private List<Entities.Reason> _reasonDataStore;
-
-		public Reason()
-		{
-			_reasonDataStore = new List<Entities.Reason>
-			{
-				new Entities.Reason { Id = 1, ReasonVerbage = REASON_ONE },
-				new Entities.Reason { Id = 2, ReasonVerbage = REASON_TWO },
-				new Entities.Reason { Id = 3, ReasonVerbage = REASON_THREE },
-				new Entities.Reason { Id = 4, ReasonVerbage = REASON_FOUR },
-				new Entities.Reason { Id = 5, ReasonVerbage = REASON_FIVE },
-				new Entities.Reason { Id = 6, ReasonVerbage = REASON_SIX }
-			};
-		}
+		private const string FILE_NAME = "data/ReasonData.json";
 
 		/// <summary>
 		/// Represents a <see cref="List{T}"/> of type <see cref="Entities.Reason"/>
 		/// </summary>
-		public IEnumerable<Entities.Reason> ReasonDataStore => _reasonDataStore;
+		public IEnumerable<Entities.Reason> GetReasons()
+		{
+			// establish a list to return whether it's filled or not
+			var entities = new List<Entities.Reason>();
+
+			// fetch persistent data from the JSON file
+			var stream = File.ReadAllText(FILE_NAME);
+			var results = JsonConvert.DeserializeObject<List<Entities.Reason>>(stream);
+
+			if (results != null && results.Count() > 0)
+			{
+				entities.AddRange(results);
+			}
+
+			return entities;
+		}
 
 		/// <summary>
 		/// Allows the addition of a new reason
 		/// </summary>
 		/// <param name="entity">The <see cref="Entities.Reason"/> instance to persist</param>
 		/// <returns>The <see cref="Entities.Reason"/> instance added</returns>
-		public Entities.Reason AddReason(Entities.Reason entity)
+		public async Task<Entities.Reason> AddReason(Entities.Reason entity)
 		{
 			// first make sure it is a new record
 			if(entity.Id == 0)
 			{
-				// we have an add request so increment the Id value
-				entity.Id = _reasonDataStore.Max(x => x.Id) + 1;
-				_reasonDataStore.Add(entity);
+				// serialize new object
+				var entityString = JsonConvert.SerializeObject(entity);
+				// open file and append text to it (creates new file if doesn't exist)
+				await File.AppendAllTextAsync(FILE_NAME, entityString);
 
-				// return the enity saved not the whole list; list can be retrieved by the client asynchronously
 				return entity;
 			}
 
-			return UpdateReason(entity);
+			return await UpdateReason(entity);
 		}
 
 		/// <summary>
@@ -62,19 +61,34 @@ namespace ReasonRepository
 		/// </summary>
 		/// <param name="entity">The <see cref="Entities.Reason"/> instance to modify</param>
 		/// <returns>The <see cref="Entities.Reason"/> instance modified</returns>
-		public Entities.Reason UpdateReason(Entities.Reason entity)
+		public async Task<Entities.Reason> UpdateReason(Entities.Reason entity)
 		{
 			// make sure its an update not an add
 			if(entity.Id > 0)
 			{
-				// set the item in list as the new item
-				_reasonDataStore[_reasonDataStore.FindIndex(index => index.Id == entity.Id)] = entity;
+				// serialize new object
+				var entityString = JsonConvert.SerializeObject(entity);
+
+				// fetch the list of reasons from file
+				var response = GetReasons();
+
+				if(response != null)
+				{
+					// convert deferred IEnumerable to a list; thus executing the fetch
+					var reasonList = response.ToList();
+
+					// find record in list and over write with new data
+					reasonList[reasonList.FindIndex(x => x.Id == entity.Id)] = entity;
+
+					// finally write the data back to file
+					await File.WriteAllTextAsync(FILE_NAME, entityString);
+				}
 
 				// return the enity saved not the whole list; list can be retrieved by the client asynchronously
 				return entity;
 			}
 
-			return AddReason(entity);
+			return await AddReason(entity);
 		}
 	}
 }

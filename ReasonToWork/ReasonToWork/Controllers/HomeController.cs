@@ -120,6 +120,7 @@ namespace ReasonToWork.Controllers
                 var content = new MultipartFormDataContent();
                 // convert the model to a JSON object using string content
                 content.Add(new StringContent(model.ReasonVerbage), "ReasonVerbage");
+                content.Add(new StringContent(model.ForExample), "ForExample");
 
                 // invoke the API and send the content
                 using (var response = await client.PutAsync(_reasonAPIBaseUrl, content))

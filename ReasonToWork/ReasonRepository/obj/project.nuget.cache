@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3eptOctMfBMm6kZx9MBxllW/3Kh3NIVHhrQU7E6q1XUuBc/8ECnkXZ4XxKM3OqME0JLbEaZPjt+eoXICVhD22g==",
+  "dgSpecHash": "8Oa/vGaWWVsvcZAiofHE44zt7RF02Q748wtlESa1juIxrY9ZCH8kG2AkOZPWp/uYPAZJb46LGZnlzH6etv/T+A==",
   "success": true,
   "projectFilePath": "C:\\Repos\\berkshirehathaway\\ReasonToWork\\ReasonRepository\\ReasonRepository.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\baasm\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
