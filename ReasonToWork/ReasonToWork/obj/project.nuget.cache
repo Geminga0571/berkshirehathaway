@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "mBNXlhz+zJS3nPiDUJSZcfn4QDmxU1rIkRDBzqBjkXsiAUR/HRB5VWU4er1f9N7FqRQnKKlT7IOa+snX57fMUQ==",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\berkshirehathaway\\ReasonToWork\\ReasonToWork\\ReasonToWork.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\baasm\\.nuget\\packages\\bootstrap\\4.5.3\\bootstrap.4.5.3.nupkg.sha512",
+    "C:\\Users\\baasm\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
+    "C:\\Users\\baasm\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\baasm\\.nuget\\packages\\popper.js\\1.16.1\\popper.js.1.16.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,9 @@
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\bin\Debug\netcoreapp3.1\ReasonRepository.deps.json
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\bin\Debug\netcoreapp3.1\ReasonRepository.dll
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\bin\Debug\netcoreapp3.1\ReasonRepository.pdb
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.AssemblyInfoInputs.cache
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.AssemblyInfo.cs
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.csproj.CoreCompileInputs.cache
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.dll
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.pdb
+C:\Repos\berkshirehathaway\ReasonToWork\ReasonRepository\obj\Debug\netcoreapp3.1\ReasonRepository.csprojAssemblyReference.cache

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ReasonViewModel>
+@{
+    ViewData["Title"] = "  BHHC";
+}
+
+@foreach(var reason in Model)
+{
+<div>
+	<span>@reason.ReasonVerbage</span>
+	<span>@reason.Id</span>
+</div>
+}
