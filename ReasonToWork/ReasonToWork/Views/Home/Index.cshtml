@@ -7,6 +7,7 @@
 	There are many reasons to want to work for Berkshire Hathaway Homestate Companies (BHHC). Below is a top list of what inspires me to want to become a BHHC employee.
 </div>
 
+<div id="number-of-reasons"></div>
 @foreach (var reason in Model)
 {
 	<div id="card-@reason.Id" class="card card-third">
@@ -15,7 +16,7 @@
 			<p class="card-text">
 				@reason.ReasonVerbage
 			</p>
-			<button id="example-@reason.Id" class="btn btn-sm btn-info float-right" data-toggle="popover" data-trigger="focus" title="@reason.Title Example" data-content="@reason.ForExample">For Example</button>
+			<button id="example-@reason.Id" class="btn btn-sm btn-info float-right" data-toggle="popover" data-trigger="focus" title="@reason.Title Example" data-content="@reason.ForExample"><i class="fas fa-exclamation-circle"></i> For Example</button>
 		</div>
 	</div>
 }

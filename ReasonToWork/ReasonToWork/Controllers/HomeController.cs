@@ -61,6 +61,33 @@ namespace ReasonToWork.Controllers
         }
 
         /// <summary>
+        /// Fetches reasons and determines count
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public int GetReasonCount()
+        {
+            // create an empty list (if nothing is found it displays nothing
+            var reasonList = new List<ReasonViewModel>();
+
+            // use http client to instantiate the API 
+            using (HttpClient client = new HttpClient())
+            {
+                // invoke the fetch operation from the API
+                using (var response = client.GetAsync(_reasonAPIBaseUrl))
+                {
+                    // extract data as string from the http client response package
+                    var responseString = response.Result.Content.ReadAsStringAsync();
+                    // deserialize the string into JSON and load it into our generic list
+                    reasonList = JsonConvert.DeserializeObject<List<ReasonViewModel>>(responseString.Result);
+                }
+            }
+
+            // bind the list to the view
+            return reasonList.Count;
+        }
+
+        /// <summary>
         /// Reprsents a GET version of Add such that nothing happens
         /// </summary>
         /// <returns></returns>
