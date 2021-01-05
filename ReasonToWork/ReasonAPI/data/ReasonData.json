@@ -1,32 +1,38 @@
 [
 	{
 		"Id": 1,
-		"ReasonVerbage": "Forefront of progressive maintenance and updating of existing applications utilizing best practices and qualifying latest technologies. To enhance usability and ease, streamline the users experience, increasing visualization of the data and allowing quick access to details with the fewest clicks and page reloads possible.",
-		"ForExample": "Using modern tools such as Bootstrap and Ajax to design a view that loads a grid with styled data elements that pop-out to the user and provides simple icon buttons for accessing further details at their fingertips."
+		"ReasonVerbage": "Experienced in collaborating with senior members and translating requests to the team ensuring everyone stays on track to bring the outcome expected. Welcome input from everyone, listens to reason and considers every possible option weighing the balances.",
+		"ForExample": "WIth existing functionality that the client may not be sure of simply explaining how it works (what it is meant to do) has yielded the best outcome in client relations.",
+		"Title": "Collaborating"
 	},
 	{
 		"Id": 2,
-		"ReasonVerbage": "Database structure quality and performance improvements that increase analysis efficiency, retrieval times and data priority. To make data analysis and filing of insurance claims faster, accurate and secure, saving time and money.",
-		"ForExample": "Adding appropriate indexing that does not slow down insert and modification of data along with updated statistics and improved store procedures can inherently reduce the time for data retrieval exponentially."
+		"ReasonVerbage": "Offer up solutions to existing concerns by listening to a full detail of the problem at hand. Have helped others of high level and low level skill both directly and indirectly with this by discussing a possible solution utilizing all tools (such as white boards, pen and paper etc).",
+		"ForExample": "While doing C++ maintenance overheard the team discussing problems with designing the next version and offered well thought and vetted solutions. Eventually I was asked to join the team and lead up the Bill Generation service module.",
+		"Title": "Mentoring",
 	},
 	{
 		"Id": 3,
-		"ReasonVerbage": "Using my abstract thought processing to vette out the relations between the vast amount of technologies and application tools used to align them for ease of use, and reduce the number of bottlenecks that can increase the risk of problems and failure points.",
-		"ForExample": "Implementation of Dependency Injection to maintain the Separation of Concern while allowing the service to consume the data store."
+		"ReasonVerbage": "Forefront of progressive maintenance and updating of existing applications utilizing best practices and qualifying latest technologies. To enhance usability and ease, streamline the users experience, increasing visualization of the data and allowing quick access to details with the fewest clicks and page reloads possible.",
+		"ForExample": "Using modern tools such as Bootstrap and Ajax to design a view that loads a grid with styled data elements that pop-out to the user and provides simple icon buttons for accessing further details at their fingertips.",
+		"Title": "Best Practices",
 	},
 	{
 		"Id": 4,
-		"ReasonVerbage": "Reason",
-		"ForExample": "example"
+		"ReasonVerbage": "Database structure quality and performance improvements that increase analysis efficiency, retrieval times and data priority. To make data analysis and filing of insurance claims faster, accurate and secure, saving time and money.",
+		"ForExample": "Adding appropriate indexing that does not slow down insert and modification of data along with updated statistics and improved store procedures can inherently reduce the time for data retrieval exponentially.",
+		"Title": "Performance"
 	},
 	{
 		"Id": 5,
-		"ReasonVerbage": "Reason",
-		"ForExample": "example"
+		"ReasonVerbage": "Using my abstract thought processing to vette out the relations between the vast amount of technologies and application tools used to align them for ease of use, and reduce the number of bottlenecks that can increase the risk of problems and failure points.",
+		"ForExample": "Implementation of Dependency Injection to maintain the Separation of Concern while allowing the service to consume the data store.",
+		"Title": "Problem Solving"
 	},
 	{
 		"Id": 6,
-		"ReasonVerbage": "Reason",
-		"ForExample": "example"
+		"ReasonVerbage": "Able to contribute to the bottom line to deliver results that keeps the business profitable and productive. All about the end user.",
+		"ForExample": "Headed a small team to finish up an application in 5 months, working long days with the customer and the owner of the company to meet the business needs and deliver a solid product on time.",
+		"Title": "Delivery"
 	}
 ]

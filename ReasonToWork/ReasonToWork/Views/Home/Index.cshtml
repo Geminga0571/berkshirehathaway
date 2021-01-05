@@ -1,22 +1,21 @@
 ﻿@model IEnumerable<ReasonViewModel>
 @{
-    ViewData["Title"] = "  BHHC";
+	ViewData["Title"] = "  BHHC";
 }
 
 <div>
 	There are many reasons to want to work for Berkshire Hathaway Homestate Companies (BHHC). Below is a top list of what inspires me to want to become a BHHC employee.
 </div>
 
-<ul class="list-group list-group-flush">
-	@foreach (var reason in Model)
-	{
-	<li class="list-group-item">
-		@reason.ReasonVerbage
-		<ul class="list-group">
-			<li class="list-group-item">
-				<u>For Example:</u> <small>@reason.ForExample</small>
-			</li>
-		</ul>		
-	</li>
-	}
-</ul>
+@foreach (var reason in Model)
+{
+	<div id="card-@reason.Id" class="card card-third">
+		<div class="card-body">
+			<h5 class="card-title">@reason.Title</h5>
+			<p class="card-text">
+				@reason.ReasonVerbage
+			</p>
+			<button id="example-@reason.Id" class="btn btn-sm btn-info float-right" data-toggle="popover" data-trigger="focus" title="@reason.Title Example" data-content="@reason.ForExample">For Example</button>
+		</div>
+	</div>
+}

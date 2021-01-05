@@ -49,7 +49,8 @@ namespace ReasonAPI.Controllers
 					 {
 						 Id = item.Id,
 						 ReasonVerbage = item.ReasonVerbage,
-						 ForExample = item.ForExample
+						 ForExample = item.ForExample,
+						 Title = item.Title
 					 };
 					 // dump the model into the list to be returned
 					 models.Add(model);
@@ -74,7 +75,8 @@ namespace ReasonAPI.Controllers
 			return Ok(_reasonRepository.AddReason(new ReasonRepository.Entities.Reason { 
 				Id = model.Id,
 				ReasonVerbage = model.ReasonVerbage,
-				ForExample = model.ForExample
+				ForExample = model.ForExample,
+				Title = model.Title
 			}));
 		}
 
@@ -92,7 +94,8 @@ namespace ReasonAPI.Controllers
 			return Ok(_reasonRepository.UpdateReason(new ReasonRepository.Entities.Reason
 			{
 				ReasonVerbage = model.ReasonVerbage,
-				ForExample = model.ForExample
+				ForExample = model.ForExample,
+				Title = model.Title
 			}));
 		}
 	}
